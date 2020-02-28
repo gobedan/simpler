@@ -28,6 +28,10 @@ module Simpler
       @response.status = code
     end
 
+    def params
+      @request.params
+    end
+
     private
     
     RENDER_FORMATS = { json: 'application/json', 
@@ -49,10 +53,6 @@ module Simpler
 
     def render_body
       View.new(@request.env).render(binding)
-    end
-
-    def params
-      @request.params
     end
 
     def render(template)
