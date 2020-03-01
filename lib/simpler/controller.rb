@@ -42,7 +42,6 @@ module Simpler
     end
 
     def set_default_headers
-      # @response['Content-Type'] = 'text/html'
       headers['Content-Type'] = 'text/html'
     end
 

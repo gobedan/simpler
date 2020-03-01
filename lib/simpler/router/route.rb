@@ -16,10 +16,10 @@ module Simpler
       def match?(method, path)
         if @property
           path_prefix = @path[0..-(@property.size + 2)]
-          @method == method && path.match(/#{path_prefix}\d+/)
+          @method == method && path.match(/#{path_prefix}\d+\z/)
           @value = path[/\d+\z/].to_i
         else
-          @method == method && path.match(@path)
+          @method == method && path.match(/#{@path}\z/)
         end
       end
 
